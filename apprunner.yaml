@@ -7,7 +7,7 @@ build:
       - pip3 install -r requirements.txt
 run:
   runtime-version: 3.11
-  command: gunicorn myproject.wsgi:application --log-file -
+  command: export PATH=$PATH:/usr/local/python3/bin && pip3 install gunicorn && gunicorn myproject.wsgi:application --bind=0.0.0.0:8000
   network:
     port: 8000
     env: 8000
