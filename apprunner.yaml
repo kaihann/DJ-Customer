@@ -7,8 +7,6 @@ build:
       - pip3 install -r requirements.txt
 run:
   runtime-version: 3.11
-  command: pip3 install gunicorn django_apprunner.wsgi
-  pre-run: []
   command: gunicorn myproject.wsgi:application --log-file -
   network:
     port: 8000
