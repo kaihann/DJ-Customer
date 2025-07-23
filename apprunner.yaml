@@ -2,9 +2,11 @@ version: 1.0
 runtime: python311
 build:
   commands:
+    pre-build:
+      - echo "Updating pip"
+      - pip3 install --upgrade pip
     build:
-      - pip3 install pipenv
-      - pipenv install
+      - echo "Installing dependencies"
       - pip3 install -r requirements.txt
 run:
   command: sh startup.sh
